@@ -15,7 +15,7 @@ public class Shop {
     }
 
 
-    public static TreeMap AddtoMap(Customer customer, LoyaltyCard loyaltyCard) {
+    public static TreeMap AddToMap(Customer customer, LoyaltyCard loyaltyCard) {
         customerCard.put(customer,loyaltyCard);
         return customerCard;
     }

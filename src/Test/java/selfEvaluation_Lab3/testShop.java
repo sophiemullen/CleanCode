@@ -1,6 +1,7 @@
 package selfEvaluation_Lab3;
 
 
+import org.assertj.core.api.AbstractMapAssert;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
@@ -12,20 +13,21 @@ public class testShop {
     private Customer testCustomer;
     private LoyaltyCard testLoyaltyCard;
     private TreeMap<Customer,LoyaltyCard> testCard;
-    Shop shop;
+
 
 
 
     @Test
     public void testCustomerAndCardAddedToMap()throws Exception{
-        String lastName = "Mullen";
-        String firstName = "Sophie";
-        int barcode = 1234;
+
+        String lastName;
+        String firstName;
+        int barcode= 0;
         int bonusPoints = 0;
-        testCustomer = new Customer(lastName,firstName);
-        testLoyaltyCard = new LoyaltyCard(barcode,bonusPoints);
-        shop.AddtoMap(testCustomer,testLoyaltyCard);
-        Assertions.assertThat(shop.AddtoMap(testCustomer, testLoyaltyCard)).isEqualTo("Sophie", "Mullen", 1234, 0);
+        testCustomer = new Customer("Mullen","Sophie");
+        testLoyaltyCard = new LoyaltyCard(1234,0);
+        Shop.AddToMap(testCustomer,testLoyaltyCard);
+        AbstractMapAssert equalTo = Assertions.assertThat(Shop.AddToMap(testCustomer,testLoyaltyCard)).isEqualTo("Mullen","Sophie", 1234, 0);
     }
 
     @Test

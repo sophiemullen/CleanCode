@@ -12,7 +12,7 @@ public class Customer {
         this.firstName = firstName;
     }
 
-   public void Customer (String lastName, String firstName){
+   public void Customer (String lastName, String firstName,int barcode, int bonusPoints){
         customer = new Customer(lastName,firstName);
    }
 }
