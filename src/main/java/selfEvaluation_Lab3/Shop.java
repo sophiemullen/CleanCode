@@ -5,7 +5,7 @@ import java.util.TreeMap;
 
 public class Shop {
 
-    public  Customer customer;
+    public Customer customer;
     public LoyaltyCard loyaltyCard;
     public static TreeMap<Customer,LoyaltyCard> customerCard = new TreeMap<>();
 
@@ -15,8 +15,9 @@ public class Shop {
     }
 
 
-    public static void AddtoMap(Customer customer, LoyaltyCard loyaltyCard) {
+    public static TreeMap AddtoMap(Customer customer, LoyaltyCard loyaltyCard) {
         customerCard.put(customer,loyaltyCard);
-
+        return customerCard;
     }
+
 }

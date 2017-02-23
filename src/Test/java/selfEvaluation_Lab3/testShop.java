@@ -12,6 +12,7 @@ public class testShop {
     private Customer testCustomer;
     private LoyaltyCard testLoyaltyCard;
     private TreeMap<Customer,LoyaltyCard> testCard;
+    Shop shop;
 
 
 
@@ -23,8 +24,8 @@ public class testShop {
         int bonusPoints = 0;
         testCustomer = new Customer(lastName,firstName);
         testLoyaltyCard = new LoyaltyCard(barcode,bonusPoints);
-        Shop.AddtoMap(testCustomer,testLoyaltyCard);
-        Assertions.assertThat(Shop.AddtoMap(testCustomer,testLoyaltyCard).
+        shop.AddtoMap(testCustomer,testLoyaltyCard);
+        Assertions.assertThat(shop.AddtoMap(testCustomer, testLoyaltyCard)).isEqualTo("Sophie", "Mullen", 1234, 0);
     }
 
     @Test
